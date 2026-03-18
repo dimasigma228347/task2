@@ -10,10 +10,8 @@ while a != '0':
            1 добавить книгу\n\
            2 настройки книги\n\
            3 моя библиотека\n\
-           4 сохранить библиотеку\n\
-           5 загрузить библиотеку\n\
-           6 прочитанные книги\n\
-           7 любимые книги\n\
+           4 прочитанные книги\n\
+           5 любимые книги\n\
            0 выход')
     a = input()
     if a == '1':
@@ -58,18 +56,10 @@ while a != '0':
         with open("data.json", "w", encoding="utf-8") as file:
             json.dump(lib, file)
     elif a == '4':
-        with open("data.json", "w", encoding="utf-8") as file:
-            json.dump(lib, file)
-        input('Библиотека успешно сохранена. Для продолжения нажмите Enter...')
-    elif a == '5':
-        with open("data.json", "r", encoding="utf-8") as file:
-            lib = json.load(file)
-        input('Библиотека успешно загружена. Для продолжения нажмите Enter...')
-    elif a == '6':
         for i in lib:
             if lib[i][2]:
                 print(i, '-', lib[i][0])
-    elif a == '7':
+    elif a == '5':
         for i in lib:
             if lib[i][3]:
                 print(i, '-', lib[i][0])
