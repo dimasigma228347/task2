@@ -3,6 +3,8 @@ import json
 
 lib = dict()
 a = ''
+with open("data.json", "r", encoding="utf-8") as file:
+    lib = json.load(file)
 while a != '0':
     print('===========T-библиотека===========\n\
            1 добавить книгу\n\
@@ -58,7 +60,7 @@ while a != '0':
     elif a == '4':
         with open("data.json", "w", encoding="utf-8") as file:
             json.dump(lib, file)
-        input('Библиотека успешно выгружена. Для продолжения нажмите Enter...')
+        input('Библиотека успешно сохранена. Для продолжения нажмите Enter...')
     elif a == '5':
         with open("data.json", "r", encoding="utf-8") as file:
             lib = json.load(file)
